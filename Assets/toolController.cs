@@ -8,14 +8,15 @@ public class toolController : MonoBehaviour
     
     public void ToolsClicked()
     {
-        if (canBePicked)
-        {
-            spriteRenderer.enabled = false;
-            canBePicked = false;
-        }
-        else
-        {
-            
-        }
+        if(!canBePicked ) return;
+        
+        spriteRenderer.enabled = false;
+        canBePicked = false;
+    }
+    
+    public void ResetTool()
+    {
+        spriteRenderer.enabled = true;
+        canBePicked = true;
     }
 }
