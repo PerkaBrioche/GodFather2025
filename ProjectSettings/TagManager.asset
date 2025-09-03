@@ -3,12 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - BloodZone
+  - SafeZone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Game Zone Raycasts
   - Water
   - UI
   - 
