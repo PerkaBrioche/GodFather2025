@@ -3,6 +3,7 @@ using UnityEngine;
 public class ToolsManager : MonoBehaviour
 {
     public static ToolsManager Instance;
+    private toolController actualTool;
     
     private void Awake()
     {
@@ -16,8 +17,12 @@ public class ToolsManager : MonoBehaviour
         }
     }
     
-    public void NewToolSelected()
+    public void NewToolSelected(toolController tool)
     {
-        
+        if (actualTool != null)
+        {
+            actualTool.ResetTool();
+        }
+        actualTool = tool;
     }
 }

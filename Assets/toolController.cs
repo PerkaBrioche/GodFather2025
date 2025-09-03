@@ -1,9 +1,11 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class toolController : MonoBehaviour
 {
     bool canBePicked = true;
     
+    [Foldout("References")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     
     public void ToolsClicked()
@@ -12,6 +14,8 @@ public class toolController : MonoBehaviour
         
         spriteRenderer.enabled = false;
         canBePicked = false;
+        
+        ToolsManager.Instance.NewToolSelected(this);
     }
     
     public void ResetTool()
