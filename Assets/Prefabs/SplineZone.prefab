@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3409274037445138879}
   - component: {fileID: 8034708711992086746}
   - component: {fileID: 7586511425544379875}
-  - component: {fileID: 8954255453856168434}
-  m_Layer: 0
+  - component: {fileID: 6720735067431488487}
+  m_Layer: 3
   m_Name: SplineZone
-  m_TagString: Untagged
+  m_TagString: SafeZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,7 +181,7 @@ EdgeCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e878c562ec4aaf84a89f1a730b6d8d7f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -206,7 +206,7 @@ EdgeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.15
+  m_EdgeRadius: 0.1
   m_Points:
   - {x: -0.78175575, y: -0.42428386}
   - {x: -0.06360156, y: -0.8784716}
@@ -218,7 +218,7 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &8954255453856168434
+--- !u!114 &6720735067431488487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4750414772411279824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bcb27bcd19917145b8c01b88afc7dee, type: 3}
+  m_Script: {fileID: 11500000, guid: ce89b041715b675429245540a433fe5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WoundsControllers: []

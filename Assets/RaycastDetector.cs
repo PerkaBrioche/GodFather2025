@@ -18,6 +18,7 @@ public class RaycastDetector : MonoBehaviour
         {
             Debug.Log("Blood!");
         }
+        else { Debug.Log("no zone detected"); }
     }
 
     //void OnDrawGizmos()
