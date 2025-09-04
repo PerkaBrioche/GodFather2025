@@ -56,6 +56,8 @@ public class CanvasManager : MonoBehaviour
         switch (currentState)
         {
             case UiStateEnum.GAME:
+                if (Input.GetKeyDown(KeyCode.R)) StartNewGame();
+
                 if (Cursor.lockState == CursorLockMode.Locked)
                 {
                     Cursor.lockState = CursorLockMode.None;
