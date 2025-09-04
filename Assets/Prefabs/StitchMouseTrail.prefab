@@ -191,3 +191,4 @@ MonoBehaviour:
   prefab: {fileID: 4678265075263398775}
   _stitchDistance: 150
   _stitchDuration: 100
+  raycastDetector: {fileID: 0}
