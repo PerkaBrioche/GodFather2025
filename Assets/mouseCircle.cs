@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.ParticleSystem;
@@ -13,9 +14,12 @@ public class mouseCircle : MonoBehaviour
     [SerializeField] float _stitchDistance=2f;
     [SerializeField] float _stitchDuration=100f;
 
+    [SerializeField] RaycastDetector raycastDetector;
+
     // Update is called once per frame
     void Update()
     {
+        if (raycastDetector.eCurrentZone == CurrentZoneEnum.NONE) return;
 
         currentPosition = Input.mousePosition;
 
