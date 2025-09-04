@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CanvasGameStateManager : MonoBehaviour
+public class CanvasManager : MonoBehaviour
 {
     [SerializeField] GameObject _loseScreen;
     [SerializeField] GameObject _winScreen;
