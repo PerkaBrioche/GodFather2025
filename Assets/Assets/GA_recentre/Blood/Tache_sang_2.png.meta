@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 077e3b24cfcbada4ab14212a1ce441d2
+guid: 464a992ed0fc1f2409ef5aa7e14881c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3399033354041134510
-    second: Bobine_cursor_0
+      213: -9660000916445315
+    second: Tache_sang_2_0
+  - first:
+      213: 4197004866595629308
+    second: Tache_sang_2_1
+  - first:
+      213: 5059279949669516995
+    second: Tache_sang_2_2
+  - first:
+      213: -641217732488515083
+    second: Tache_sang_2_3
+  - first:
+      213: -4898855795635552192
+    second: Tache_sang_2_4
+  - first:
+      213: -1507209240085835935
+    second: Tache_sang_2_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +39,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -48,7 +63,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -57,7 +72,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 7
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -152,13 +167,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bobine_cursor_0
+      name: Tache_sang_2_0
       rect:
         serializedVersion: 2
-        x: 615
-        y: 177
-        width: 690
-        height: 725
+        x: 27
+        y: 77
+        width: 21
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +182,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ead835f93dacb2f20800000000000000
-      internalID: 3399033354041134510
+      spriteID: d7768d4c74eaddff0800000000000000
+      internalID: -9660000916445315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tache_sang_2_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 45
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8a40280b1ce3a30800000000000000
+      internalID: 4197004866595629308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tache_sang_2_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 28
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6ce4b1f4c263640800000000000000
+      internalID: 5059279949669516995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tache_sang_2_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 49
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1375f9edfe917f0800000000000000
+      internalID: -641217732488515083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tache_sang_2_4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 11
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 040874feb94c30cb0800000000000000
+      internalID: -4898855795635552192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tache_sang_2_5
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 12
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f4f728e21551be0800000000000000
+      internalID: -1507209240085835935
       vertices: []
       indices: 
       edges: []
@@ -187,7 +312,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bobine_cursor_0: 3399033354041134510
+      Tache_sang_2_0: -9660000916445315
+      Tache_sang_2_1: 4197004866595629308
+      Tache_sang_2_2: 5059279949669516995
+      Tache_sang_2_3: -641217732488515083
+      Tache_sang_2_4: -4898855795635552192
+      Tache_sang_2_5: -1507209240085835935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

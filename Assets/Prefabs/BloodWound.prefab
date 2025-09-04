@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f5a437183f98044924127f5ef71d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woundsSprites: []
+  woundsSprites:
+  - {fileID: 21300000, guid: 770f176fc1c9ce246b3bfbefd4c714e3, type: 3}
   spriteRenderer: {fileID: 5197108754177131255}
 --- !u!1 &5759097103916934672
 GameObject:
@@ -1425,8 +1426,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -1544,7 +1545,11 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: 21300000, guid: ae1037fb5feee7947a3c52c63ef6bf1e, type: 3}
+    - sprite: {fileID: 21300000, guid: b979dbdf7175ff648a9448cacd0aee7a, type: 3}
+    - sprite: {fileID: 21300000, guid: afaff0466bd717a45b53e665962ac149, type: 3}
+    - sprite: {fileID: 21300000, guid: b638bd2df1c69474182cbf29172f1c60, type: 3}
+    - sprite: {fileID: 21300000, guid: 464a992ed0fc1f2409ef5aa7e14881c1, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4916,8 +4921,8 @@ Transform:
   m_GameObject: {fileID: 5966056290680928268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0131, y: -0.0519, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.04, y: 0.16, z: 0}
+  m_LocalScale: {x: 2.2846, y: 2.2846, z: 2.2846}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5065215389953571907}
@@ -4966,7 +4971,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 05cb7528d8f662f4d8c435fd57fd154f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

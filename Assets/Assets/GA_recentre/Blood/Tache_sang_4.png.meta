@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 077e3b24cfcbada4ab14212a1ce441d2
+guid: afaff0466bd717a45b53e665962ac149
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3399033354041134510
-    second: Bobine_cursor_0
+      213: 113046242051093359
+    second: Tache_sang_4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 7
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bobine_cursor_0
+      name: Tache_sang_4_0
       rect:
         serializedVersion: 2
-        x: 615
-        y: 177
-        width: 690
-        height: 725
+        x: 20
+        y: 28
+        width: 59
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ead835f93dacb2f20800000000000000
-      internalID: 3399033354041134510
+      spriteID: f63f5ac45fe919100800000000000000
+      internalID: 113046242051093359
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bobine_cursor_0: 3399033354041134510
+      Tache_sang_4_0: 113046242051093359
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

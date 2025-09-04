@@ -967,8 +967,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8fa373913e725488fda8c8dd05e340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobineCursor: {fileID: 0}
-  aiguilleCursor: {fileID: 0}
+  bobineCursor: {fileID: 2800000, guid: 077e3b24cfcbada4ab14212a1ce441d2, type: 3}
+  aiguilleCursor: {fileID: 2800000, guid: eb04198715582d748ac782335a75a60a, type: 3}
 --- !u!4 &1040718190
 Transform:
   m_ObjectHideFlags: 0
@@ -1066,8 +1066,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -1.0583982, y: 1.627455}
-      - {x: -9.828917, y: 5.0687695}
-      - {x: -9.733751, y: 1.6820875}
+      - {x: -9.473764, y: 4.898995}
+      - {x: -9.597427, y: 1.7202357}
       - {x: -3.2388477, y: -0.10604441}
       - {x: -0.89193875, y: -1.1060938}
       - {x: 0.8644105, y: -2.649557}

@@ -47,6 +47,7 @@ public class woundController : MonoBehaviour
         if(_healed) return;
         
         boxCollider2D.enabled = false;
+        _spriteRenderer.sortingOrder -= 1;
         _healed = true;
         UpdateWoundSprite();
     }
