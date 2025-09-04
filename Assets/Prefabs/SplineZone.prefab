@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3409274037445138879}
   - component: {fileID: 8034708711992086746}
   - component: {fileID: 7586511425544379875}
+  - component: {fileID: 8954255453856168434}
   m_Layer: 0
   m_Name: SplineZone
   m_TagString: Untagged
@@ -164,15 +165,13 @@ MonoBehaviour:
   m_Creator: {fileID: 0}
   m_Modifiers: []
   m_ColliderSegment:
-  - {x: -3.9262958, y: 1.524807}
-  - {x: -2.6702564, y: 0.71263087}
-  - {x: -1.5068419, y: 0.01952571}
-  - {x: -0.49067494, y: -0.5845767}
-  - {x: 0.68738526, y: -1.3079978}
-  - {x: 1.5472232, y: -1.7944375}
-  - {x: 3.009994, y: -2.5490792}
-  - {x: 3.542436, y: -2.8493705}
-  - {x: 3.8242807, y: -3.0438879}
+  - {x: -3.7168365, y: 1.3883258}
+  - {x: -2.5019937, y: 0.60805947}
+  - {x: -0.5690975, y: -0.5355123}
+  - {x: 0.9374733, y: -1.4543352}
+  - {x: 1.9243748, y: -1.9898723}
+  - {x: 3.206259, y: -2.654244}
+  - {x: 3.6187298, y: -2.9016125}
   m_ShadowSegment: []
 --- !u!68 &7586511425544379875
 EdgeCollider2D:
@@ -211,16 +210,27 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -3.9262958, y: 1.524807}
-  - {x: -2.6702564, y: 0.71263087}
-  - {x: -1.5068419, y: 0.01952571}
-  - {x: -0.49067494, y: -0.5845767}
-  - {x: 0.68738526, y: -1.3079978}
-  - {x: 1.5472232, y: -1.7944375}
-  - {x: 3.009994, y: -2.5490792}
-  - {x: 3.542436, y: -2.8493705}
-  - {x: 3.8242807, y: -3.0438879}
+  - {x: -3.7168365, y: 1.3883258}
+  - {x: -2.5019937, y: 0.60805947}
+  - {x: -0.5690975, y: -0.5355123}
+  - {x: 0.9374733, y: -1.4543352}
+  - {x: 1.9243748, y: -1.9898723}
+  - {x: 3.206259, y: -2.654244}
+  - {x: 3.6187298, y: -2.9016125}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &8954255453856168434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750414772411279824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcb27bcd19917145b8c01b88afc7dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WoundsControllers: []
