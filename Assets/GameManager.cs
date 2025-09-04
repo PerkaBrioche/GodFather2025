@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     
     [Header("Reference")]
     [SerializeField] private Transform woundsParent;
+    [SerializeField] private Transform safeZoneTransform;
     
     // PRIVATE VARIABLE
     
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         InitializeSplineWounds();
         SpawnWounds();
+        Mouse.current.WarpCursorPosition(Camera.main.WorldToScreenPoint(safeZoneTransform.position));
         TimerManager.Instance.IntializeTimer(10f,1f);
     }
 
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour
     {
         int randomIndex = Random.Range(0, splinesWounds.Length);
         var sp=  Instantiate(splinesWounds[randomIndex], woundsParent);
-        _currentSplineWound = sp.GetComponent<SplineWoundsController>();
+        _currentSplineWound = sp.GetComponentInChildren<SplineWoundsController>();
         _currentSplineWound.InitializeSplineWounds();
         if (_currentSplineWound == null)
         {
