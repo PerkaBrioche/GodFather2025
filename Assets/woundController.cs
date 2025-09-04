@@ -65,7 +65,7 @@ public class woundController : MonoBehaviour
             return;
         }
         _spriteRenderer.sprite = woundSprite[UnityEngine.Random.Range(0, woundSprite.Count)];
-        print("UPDATE WOUND SPRITE");
+        //print("UPDATE WOUND SPRITE");
     }
 
     public void ResetWound()
