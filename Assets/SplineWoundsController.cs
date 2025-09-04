@@ -8,9 +8,16 @@ public class SplineWoundsController : MonoBehaviour
 {
      public List<woundController> WoundsControllers  = new List<woundController>();
      
+     [SerializeField] private SpriteShapeRenderer spriteShapeRenderer;
+     
      public void SetWoundsControllers(List<woundController> woundsControllers)
      {
           WoundsControllers = woundsControllers;
+     }
+
+     public void InitializeSplineWounds()
+     {
+          spriteShapeRenderer.enabled = false;
      }
 
      public bool AllWoundsHealed()

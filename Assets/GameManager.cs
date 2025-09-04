@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -51,9 +52,18 @@ public class GameManager : MonoBehaviour
         int randomIndex = Random.Range(0, splinesWounds.Length);
         var sp=  Instantiate(splinesWounds[randomIndex], woundsParent);
         _currentSplineWound = sp.GetComponent<SplineWoundsController>();
+        _currentSplineWound.InitializeSplineWounds();
         if (_currentSplineWound == null)
         {
             throw new NullReferenceException("No SplineWoundsController found on the instantiated spline wound prefab.");
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(2))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

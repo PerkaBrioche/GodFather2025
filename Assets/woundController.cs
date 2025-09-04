@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.U2D;
@@ -10,16 +11,21 @@ public class woundController : MonoBehaviour
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [Foldout("REFERENCES")]
-    [SerializeField] private Sprite woundSprite;
+    [SerializeField] private List<Sprite> woundSprite;
     [Foldout("REFERENCES")]
     [SerializeField] private Sprite healedWoundSprite;
+    [Foldout("REFERENCES")]
+    [SerializeField] private BoxCollider2D boxCollider2D;
 
 
-    private void OnMouseEnter()
+    private void OnValidate()
     {
-        if(_healed){return;}
-        
-        HealWound();
+        UpdateWoundSprite();
+    }
+
+    private void Start()
+    {
+        UpdateWoundSprite();
     }
 
     private bool _healed;
@@ -34,29 +40,37 @@ public class woundController : MonoBehaviour
     public void Destroy()
     {
         DestroyImmediate(gameObject);
-
     }
 
     public void HealWound()
     {
         if(_healed) return;
         
+        boxCollider2D.enabled = false;
         _healed = true;
         UpdateWoundSprite();
     }
 
     public void UpdateWoundSprite()
     {
+        if(_spriteRenderer == null) return;
+        int random = UnityEngine.Random.Range(0, 2);
+        if (random == 0)
+        {
+            _spriteRenderer.flipX = true;
+        }
         if (_healed)
         {
             _spriteRenderer.sprite = healedWoundSprite;
             return;
         }
-        _spriteRenderer.sprite = woundSprite;
+        _spriteRenderer.sprite = woundSprite[UnityEngine.Random.Range(0, woundSprite.Count)];
+        print("UPDATE WOUND SPRITE");
     }
 
     public void ResetWound()
     {
+        boxCollider2D.enabled = true;
         _healed = false;
         UpdateWoundSprite();
     }

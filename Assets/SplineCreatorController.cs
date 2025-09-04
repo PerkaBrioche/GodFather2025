@@ -8,18 +8,22 @@ using UnityEngine.U2D;
 public class SplineCreatorController : MonoBehaviour
 {
 
-     [Range(0, 30)] public int numberOfWoundsOnSpline;
+     [Range(0, 100)] public int numberOfWoundsOnSpline;
+     [Range(0, 5)] public int numberOfBigWoundsOnSpline;
      
-     private SpriteShapeController _spriteShapeController;
-     private List<woundController> WoundsControllers  = new List<woundController>();
+
      
      [Header("FOR SAVING SPLINES")]
      [SerializeField] private string splineName;
-
+     
      [Header("REFERENCES")]
+     [SerializeField] private Transform woundsParent;
      [SerializeField] private GameObject spriteShapePrefabs;
      [SerializeField] private GameObject woundPrefabs;
-
+     [SerializeField] private GameObject bigWoundPrefabs;
+     [SerializeField] private SpriteShapeController _spriteShapeController;
+     [SerializeField] private List<woundController> WoundsControllers  = new List<woundController>();
+     [SerializeField] private List<BigWoundsController> bigWoundsControllers  = new List<BigWoundsController>();
 
      [Button]
      public void UpdateWounds()
@@ -38,13 +42,23 @@ public class SplineCreatorController : MonoBehaviour
                     woundsController.Destroy();
                }
           }
+
+          foreach (var bigWoundsController in bigWoundsControllers)
+          {
+               if (bigWoundsController != null)
+               {
+                    print("C");
+                    bigWoundsController.DestroyWounds();
+               }
+          }
+          bigWoundsControllers.Clear();
           WoundsControllers.Clear();
      }
 
      [Button]
      public void CreateSpline()
      {
-          var sp =  Instantiate(spriteShapePrefabs, Vector3.zero, quaternion.identity ,transform);
+          var sp =  Instantiate(spriteShapePrefabs, woundsParent.position, quaternion.identity ,transform);
           _spriteShapeController = sp.transform.GetComponent<SpriteShapeController>();
           UpdateWoundsOnSpline();
      }
@@ -52,20 +66,24 @@ public class SplineCreatorController : MonoBehaviour
      public void UpdateWoundsOnSpline()
      {
           if (_spriteShapeController == null) return;
+          int numberOfallWounds = numberOfWoundsOnSpline + numberOfBigWoundsOnSpline;
           for (int i = 0; i < numberOfWoundsOnSpline; i++)
           { 
                var wounds =  Instantiate(woundPrefabs , _spriteShapeController.transform);
                var  woundsController = wounds.GetComponent<woundController>(); 
-               float ratio = ((float)i / (float)(numberOfWoundsOnSpline-1));
+               float ratio = ((float)i / (float)(numberOfallWounds-1));
                woundsController.Intialize(ratio, _spriteShapeController); 
                WoundsControllers.Add(woundsController);
-                   
           }
+
+          
      }
      
      [Button]
      public void ClearSpline()
      {
+          ClearWoundsOnSpline();
+
           if (_spriteShapeController != null)
           {
                DestroyImmediate(_spriteShapeController.gameObject);
@@ -89,5 +107,15 @@ public class SplineCreatorController : MonoBehaviour
 
           splineName = "";
      }
-     
+
+
+     [Button]
+     public void AddBigWound()
+     {
+          var wounds =  Instantiate(bigWoundPrefabs , _spriteShapeController.transform);
+          var  woundsController = wounds.GetComponent<BigWoundsController>();
+          bigWoundsControllers.Add(woundsController);
+     }
+
+
 }
