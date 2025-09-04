@@ -1,87 +1,34 @@
-using NaughtyAttributes;
-using System;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class CanvasGameStateManager : MonoBehaviour
+public class CanvasManager : MonoBehaviour
 {
-    [SerializeField] GameObject _loseScreen;
-    [SerializeField] GameObject _winScreen;
-
-    [SerializeField] TimerManager timerManager;
-
-    private void OnEnable()
+    public static CanvasManager Instance;
+    
+    Animator canvasAnimator;
+    
+    [SerializeField] private Image splashBloodImage;
+    [SerializeField] private List<Sprite> spritesBloods;
+    
+    private void Awake()
     {
-        timerManager.OnTimerEnd += OpenLoseScreen;
-    }
-
-    private void OnDisable()
-    {
-        timerManager.OnTimerEnd -= OpenLoseScreen;
-    }
-
-    enum UiStateEnum
-    {
-        GAME,
-        LOSE_SCREEN,
-        WIN_SCREEN
-    }
-
-    UiStateEnum currentState = UiStateEnum.GAME;
-
-    private void Start()
-    {
-        _loseScreen.SetActive(false);
-        _winScreen.SetActive(false);
-    }
-
-    [Button("lose")]
-    private void OpenLoseScreen() // call by an event
-    {
-        _loseScreen.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        currentState = UiStateEnum.LOSE_SCREEN;
-    }
-    [Button("win")]
-    private void OpenWinScreen() // call by an event
-    {
-        _winScreen.SetActive(true);
-        Cursor.lockState = CursorLockMode.Locked;
-        currentState = UiStateEnum.LOSE_SCREEN;
-    }
-
-    private void Update()
-    {
-        
-        switch (currentState)
+        if (Instance == null)
         {
-            case UiStateEnum.GAME:
-                if (Input.GetKeyDown(KeyCode.R)) StartNewGame();
-
-                if (Cursor.lockState == CursorLockMode.Locked)
-                {
-                    Cursor.lockState = CursorLockMode.None;
-                }
-                break;
-            case UiStateEnum.LOSE_SCREEN:
-                if (Input.anyKey)
-                {
-                    StartNewGame();
-                }
-                break;
-            case UiStateEnum.WIN_SCREEN:
-                if (Input.anyKey)
-                {
-                    StartNewGame();
-                }
-                break;
-            default:
-                break;
+            Instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
+        canvasAnimator = GetComponent<Animator>();
     }
 
-    private void StartNewGame()
+    public void ShowSplashBloods()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        splashBloodImage.sprite = spritesBloods[Random.Range(0, spritesBloods.Count)];
+        canvasAnimator.Play("SplashBlood");
+        
     }
 }

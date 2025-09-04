@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
@@ -47,8 +48,14 @@ public class woundController : MonoBehaviour
         if(_healed) return;
         
         boxCollider2D.enabled = false;
+        if (_spriteRenderer != null)
+        {
+            _spriteRenderer.sortingOrder -= 1;
+
+        }
         _healed = true;
-        UpdateWoundSprite();
+        GetComponent<Animator>().Play("CloseWound");
+        StartCoroutine(CoolDownAnimationCloseWound());  
     }
 
     public void UpdateWoundSprite()
@@ -72,6 +79,13 @@ public class woundController : MonoBehaviour
     {
         boxCollider2D.enabled = true;
         _healed = false;
+        UpdateWoundSprite();
+    }
+
+    private IEnumerator CoolDownAnimationCloseWound()
+    {
+        yield return new WaitForSeconds(0.3f);
+        print("END ANIMATION CLOSE WOUND");
         UpdateWoundSprite();
     }
 }

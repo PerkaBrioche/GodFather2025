@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
     public static CursorManager Instance;
     
-    private cursorType actualCursorType = cursorType.bobine;
+    private cursorType actualCursorType = cursorType.aiguille;
     
     
     [SerializeField] private Texture2D bobineCursor;
@@ -28,21 +29,24 @@ public class CursorManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        UpdateCursorSprite();
+    }
+
     public void ChangeCursorType(cursorType type)
     {
-        if (type == cursorType.bobine)
+        if (type == actualCursorType)
         {
             return;
         }
-
         actualCursorType = type;
         UpdateCursorSprite();
-        
     }
     
     public void UpdateCursorSprite()
     {
-        
+        print("SET CURSOR");
         if (actualCursorType == cursorType.bobine)
         {
             // set cursor
