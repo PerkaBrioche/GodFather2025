@@ -17,6 +17,7 @@ public class SplineWoundsController : MonoBehaviour
 
     public void InitializeSplineWounds()
     {
+        if(spriteShapeRenderer == null){return;}
         spriteShapeRenderer.enabled = false;
     }
 

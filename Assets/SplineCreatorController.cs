@@ -21,6 +21,7 @@ public class SplineCreatorController : MonoBehaviour
      [SerializeField] private GameObject spriteShapePrefabs;
      [SerializeField] private GameObject woundPrefabs;
      [SerializeField] private GameObject bigWoundPrefabs;
+     [SerializeField] private GameObject SplineHolder;
      [SerializeField] private SpriteShapeController _spriteShapeController;
      [SerializeField] private List<woundController> WoundsControllers  = new List<woundController>();
      [SerializeField] private List<BigWoundsController> bigWoundsControllers  = new List<BigWoundsController>();
@@ -100,8 +101,10 @@ public class SplineCreatorController : MonoBehaviour
           }
           #if UNITY_EDITOR
           var newSplines = _spriteShapeController.gameObject;
+          newSplines.transform.SetParent(SplineHolder.transform);
+          
           newSplines.GetComponent<SplineWoundsController>().SetWoundsControllers(WoundsControllers);
-          UnityEditor.PrefabUtility.SaveAsPrefabAsset(newSplines, "Assets/Resources/SplinesWound/" + splineName +".prefab");
+          UnityEditor.PrefabUtility.SaveAsPrefabAsset(SplineHolder, "Assets/Resources/SplinesWound/" + splineName +".prefab");
           UnityEditor.AssetDatabase.Refresh();
           #endif
 
