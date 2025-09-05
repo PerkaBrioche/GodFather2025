@@ -28,6 +28,7 @@ public class SplineWoundsController : MonoBehaviour
             if (woundsController == null) continue;
             if (!woundsController.IsHealed)
             {
+                print("NOT HEALED !");
                 return false;
             }
         }

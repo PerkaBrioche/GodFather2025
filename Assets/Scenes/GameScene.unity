@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 171861098}
   m_Layer: 7
   m_Name: Ventre
-  m_TagString: Untagged
+  m_TagString: BloodZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -809,10 +809,10 @@ Transform:
   m_LocalScale: {x: 0.92929, y: 0.92929, z: 0.92929}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 973585982}
+  - {fileID: 1712613840}
   - {fileID: 112928679}
   - {fileID: 1898092314}
-  - {fileID: 1712613840}
-  - {fileID: 973585982}
   m_Father: {fileID: 1248146229}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &171861098
@@ -832,7 +832,7 @@ PolygonCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1194,7 +1194,7 @@ GameObject:
   - component: {fileID: 279761424}
   m_Layer: 7
   m_Name: LeftArm
-  m_TagString: Untagged
+  m_TagString: BloodZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1212,10 +1212,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 96589111}
-  - {fileID: 1256890118}
   - {fileID: 1993762373}
   - {fileID: 1987031892}
+  - {fileID: 96589111}
+  - {fileID: 1256890118}
   - {fileID: 1409225715}
   m_Father: {fileID: 1248146229}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1236,7 +1236,7 @@ PolygonCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1340,65 +1340,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightHandData:
   - Body: {fileID: 1372221396}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 7386525338258755630, guid: 5e0e3c1a405f75b42b8a42991b605fdd, type: 3}
     splineSpawner: {fileID: 1045442774}
     mouseSpawner: {fileID: 610585148}
   - Body: {fileID: 1372221396}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 4337802170302149602, guid: bb32ba9dea0142545901483b988bee2b, type: 3}
     splineSpawner: {fileID: 1045442774}
     mouseSpawner: {fileID: 610585148}
   - Body: {fileID: 1372221396}
-    splineOnBody: {fileID: 0}
-    splineSpawner: {fileID: 1045442774}
-    mouseSpawner: {fileID: 610585148}
-  - Body: {fileID: 1372221396}
-    splineOnBody: {fileID: 0}
-    splineSpawner: {fileID: 1045442774}
-    mouseSpawner: {fileID: 610585148}
-  - Body: {fileID: 1372221396}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 8201181020416628237, guid: c30d0298ce9676b47b001a2bc8fe132a, type: 3}
     splineSpawner: {fileID: 1045442774}
     mouseSpawner: {fileID: 610585148}
   LeftHandData:
   - Body: {fileID: 279761422}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 943110103637006712, guid: e9f940c8c94adfd4ab64158232b75ae6, type: 3}
     splineSpawner: {fileID: 1993762373}
     mouseSpawner: {fileID: 1987031892}
   - Body: {fileID: 279761422}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 804662787753832293, guid: 453d39a6df882cc4698d2deb227e8991, type: 3}
     splineSpawner: {fileID: 1993762373}
     mouseSpawner: {fileID: 1987031892}
   - Body: {fileID: 279761422}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 6152855592354406799, guid: 3f6206feefd8f2b43be383222f445440, type: 3}
     splineSpawner: {fileID: 1993762373}
     mouseSpawner: {fileID: 1987031892}
   - Body: {fileID: 279761422}
-    splineOnBody: {fileID: 0}
-    splineSpawner: {fileID: 1993762373}
-    mouseSpawner: {fileID: 1987031892}
-  - Body: {fileID: 279761422}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 1535555722140123787, guid: d558cbb6caf9e2340864d8bc165049d7, type: 3}
     splineSpawner: {fileID: 1993762373}
     mouseSpawner: {fileID: 1987031892}
   BodyData:
   - Body: {fileID: 171861096}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 1722983047189993509, guid: 29c72d5df994ac74d87a435dfa042f92, type: 3}
     splineSpawner: {fileID: 1898092314}
     mouseSpawner: {fileID: 1712613840}
   - Body: {fileID: 171861096}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 5885756538642462501, guid: 5348ba44dda3e8b4d8fc335c0e960547, type: 3}
     splineSpawner: {fileID: 1898092314}
     mouseSpawner: {fileID: 1712613840}
   - Body: {fileID: 171861096}
-    splineOnBody: {fileID: 0}
-    splineSpawner: {fileID: 1898092314}
-    mouseSpawner: {fileID: 1712613840}
-  - Body: {fileID: 171861096}
-    splineOnBody: {fileID: 0}
-    splineSpawner: {fileID: 1898092314}
-    mouseSpawner: {fileID: 1712613840}
-  - Body: {fileID: 171861096}
-    splineOnBody: {fileID: 0}
+    splineOnBody: {fileID: 3998157760134756751, guid: 69461d26344b72a47bddc2cbf728f7ee, type: 3}
     splineSpawner: {fileID: 1898092314}
     mouseSpawner: {fileID: 1712613840}
   woundsParent: {fileID: 0}
@@ -1913,7 +1893,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9b20d4f4f0f6f0a47bb430f5e62049e7, type: 3}
   - {fileID: 21300000, guid: e55b6b3b324053a48bf0644c52078096, type: 3}
   - {fileID: 21300000, guid: c776341bcf4607a4198849bad44e1984, type: 3}
-  victoryScreen: {fileID: 0}
+  victoryScreen: {fileID: 1470059207}
 --- !u!95 &448638085
 Animator:
   serializedVersion: 7
@@ -2806,7 +2786,7 @@ Transform:
   m_GameObject: {fileID: 973585981}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.69, y: 0.32, z: 0}
+  m_LocalPosition: {x: -5.6900005, y: 0.32, z: 0}
   m_LocalScale: {x: 1.0760903, y: 1.0760903, z: 1.0760903}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3479,7 +3459,7 @@ GameObject:
   - component: {fileID: 1372221398}
   m_Layer: 7
   m_Name: RightArm
-  m_TagString: Untagged
+  m_TagString: BloodZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3497,11 +3477,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 610585148}
+  - {fileID: 1045442774}
   - {fileID: 685507605}
   - {fileID: 1459220456}
-  - {fileID: 1045442774}
   - {fileID: 1870806474}
-  - {fileID: 610585148}
   m_Father: {fileID: 1248146229}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1372221398
@@ -3521,7 +3501,7 @@ PolygonCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: -1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3873,6 +3853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82aafeb57839fbc4caf3e48f4bae8996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 60
 --- !u!1 &1459220455
 GameObject:
   m_ObjectHideFlags: 0

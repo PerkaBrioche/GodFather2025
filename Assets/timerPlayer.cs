@@ -3,46 +3,44 @@ using UnityEngine;
 
 public class timerPlayer : MonoBehaviour
 {
-    public static timerPlayer instance; 
-    
+    public static timerPlayer instance;
+
+    public float timer = 60f;
     
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
-        
-        if(PlayerPrefs.GetInt("newGame") == 1)
-        {
-            PlayerPrefs.SetFloat("timer", 60f);
-            PlayerPrefs.SetInt("newGame", 0);
-        }
+
+        timer = 120;
     }
 
     public void DecreaseTimerDuration()
     {
-        PlayerPrefs.SetFloat("timer", PlayerPrefs.GetFloat("timer")  -5f);
+        timer -= 10f;
+
     }
 
     public void ResetTimer()
     {
-        PlayerPrefs.SetFloat("timer", 60);
-        PlayerPrefs.SetInt("newGame", 1);
+        timer = 60f;
     }
 
     public float GetTimer()
     {
-        return PlayerPrefs.GetFloat("timer");
+        return timer;
     }
     
-    private void OnApplicationQuit()
-    {
-        ResetTimer();
-    }
+
+
+
+   
 }
 

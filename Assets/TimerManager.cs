@@ -10,7 +10,7 @@ public class TimerManager : MonoBehaviour
     
 
     private float timer;
-    private float timerSpeed;
+    private float timerSpeed = 1f;
     private float actualTimeLeft;
     private float maxTimer;
     
@@ -31,10 +31,10 @@ public class TimerManager : MonoBehaviour
     public void IntializeTimer()
     {
         print("INIT");
-        maxTimer = timer;
-        actualTimeLeft = timer;
-        timerSpeed = timerPlayer.instance.GetTimer();
-        actualTimeLeft = timer;
+        maxTimer = timerPlayer.instance.GetTimer();
+        actualTimeLeft = timerPlayer.instance.GetTimer();
+        print("GET TIME = " + actualTimeLeft);
+
         timerActive = true;
     }
     

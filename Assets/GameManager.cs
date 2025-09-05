@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("GameScene");
     }
     public void StartGame()
     {
@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        print(won);
         if (won) return;
         CheckWinCondition();
     }
@@ -118,7 +119,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(2))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("GameScene");
         }
     }
     
