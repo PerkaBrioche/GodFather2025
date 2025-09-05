@@ -20,10 +20,12 @@ public class bigWoundsCollider : MonoBehaviour
     private void OnMouseOver()
     {
         isMouseOver = true;
+        CursorManager.Instance.ChangeCursorType(CursorManager.cursorType.bobine);
     }
     
     private void OnMouseExit()
     {
         isMouseOver = false;
+        CursorManager.Instance.ChangeCursorType(CursorManager.cursorType.aiguille);
     }   
 }

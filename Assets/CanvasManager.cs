@@ -11,6 +11,8 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private Image splashBloodImage;
     [SerializeField] private List<Sprite> spritesBloods;
     
+    [SerializeField] private GameObject victoryScreen;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -29,6 +31,10 @@ public class CanvasManager : MonoBehaviour
     {
         splashBloodImage.sprite = spritesBloods[Random.Range(0, spritesBloods.Count)];
         canvasAnimator.Play("SplashBlood");
-        
+    }
+    
+    public void ShowVictoryScreen()
+    {
+        victoryScreen.SetActive(true);
     }
 }
