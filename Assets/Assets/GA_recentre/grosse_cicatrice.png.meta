@@ -211,7 +211,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      grosse_cicatrice_0: -7542181028924913403
+      grosse_cicatrice_1: 6007495659577422292
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

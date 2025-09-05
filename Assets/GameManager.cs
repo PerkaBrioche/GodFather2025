@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [Header("Reference")]
     [SerializeField] private Transform woundsParent;
     [SerializeField] private Transform safeZoneTransform;
+
+    [SerializeField] float timeLimit = 60;
     
     // PRIVATE VARIABLE
     
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
         InitializeSplineWounds();
         SpawnWounds();
         Mouse.current.WarpCursorPosition(Camera.main.WorldToScreenPoint(safeZoneTransform.position));
-        TimerManager.Instance.IntializeTimer(10f,1f);
+        TimerManager.Instance.IntializeTimer(timeLimit,1f);
     }
 
     public void SpawnWounds()
