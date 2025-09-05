@@ -28,12 +28,12 @@ public class TimerManager : MonoBehaviour
 
 
 
-    public void IntializeTimer(float timer, float timerSpeed)
+    public void IntializeTimer()
     {
         print("INIT");
         maxTimer = timer;
         actualTimeLeft = timer;
-        this.timerSpeed = timerSpeed;
+        timerSpeed = timerPlayer.instance.GetTimer();
         actualTimeLeft = timer;
         timerActive = true;
     }

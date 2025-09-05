@@ -8,7 +8,12 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour
 {
     [Header("LIST OF SPLINE WOUNDS")]
-    [SerializeField] private GameObject[] splinesWounds;
+
+    public List<SplineData> RightHandData;
+    public List<SplineData> LeftHandData;
+    public List<SplineData> BodyData;
+    
+    private SplineData _currentSplineData;
     
     
     [Header("Reference")]
@@ -38,17 +43,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         _raycastDetector = FindFirstObjectByType<RaycastDetector>();
+        
     }
 
     private void Start()
     {
         StartGame();
     }
+    
 
-    public void InitializeSplineWounds()
-    {
-        splinesWounds = Resources.LoadAll<GameObject>("SplinesWound");
-    }
 
     public void NewGame()
     {
@@ -56,17 +59,30 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        InitializeSplineWounds();
+        GetRandomBodyData();
+        SetUpBody();
         SpawnWounds();
-        Mouse.current.WarpCursorPosition(Camera.main.WorldToScreenPoint(safeZoneTransform.position));
-        TimerManager.Instance.IntializeTimer(timeLimit,1f);
+        Mouse.current.WarpCursorPosition(Camera.main.WorldToScreenPoint(_currentSplineData.mouseSpawner.position));
+        TimerManager.Instance.IntializeTimer();
         _raycastDetector.enabled = true;
+    }
+
+    public void SetUpBody()
+    {
+        if (_currentSplineData == null)
+        {
+            Debug.LogError("CurrentSplineData is null. Cannot set up body.");
+            return;
+        }
+        _currentSplineData.Body.SetActive(true);
+        
+        
+        
     }
 
     public void SpawnWounds()
     {
-        int randomIndex = Random.Range(0, splinesWounds.Length);
-        var sp=  Instantiate(splinesWounds[randomIndex], woundsParent);
+        var sp=  Instantiate(_currentSplineData.splineOnBody, _currentSplineData.splineSpawner.position, Quaternion.identity, _currentSplineData.splineSpawner);
         _currentSplineWound = sp.GetComponentInChildren<SplineWoundsController>();
         _currentSplineWound.InitializeSplineWounds();
         if (_currentSplineWound == null)
@@ -92,9 +108,10 @@ public class GameManager : MonoBehaviour
     private void Win()
     {
         won = true;
+        TimerManager.Instance.StopTimer();
+        timerPlayer.instance.DecreaseTimerDuration();
         _raycastDetector.enabled = false;
         CanvasManager.Instance.ShowVictoryScreen();
-        TimerManager.Instance.StopTimer();
     }
 
     private void Update()
@@ -109,5 +126,34 @@ public class GameManager : MonoBehaviour
     {
         if (_currentSplineWound == null) return false;
         return _currentSplineWound.AllWoundsHealed();
+    }
+    
+    
+    public void GetRandomBodyData()
+    {
+        int randomBody = Random.Range(0, 3); 
+        
+        switch (randomBody)
+        {
+            case 0: // BODY
+                _currentSplineData = BodyData[Random.Range(0, BodyData.Count)];
+                break;
+            case 1: // RIGHT HAND
+                _currentSplineData = RightHandData[Random.Range(0, RightHandData.Count)];
+                break; 
+            case 2: // LEFT HAND
+                _currentSplineData = LeftHandData[Random.Range(0, LeftHandData.Count)];
+                break;
+        }
+        
+    }
+    
+    [Serializable]
+    public class SplineData
+    {
+        public GameObject Body;
+        public GameObject splineOnBody;
+        public Transform splineSpawner;
+        public Transform mouseSpawner;
     }
 }

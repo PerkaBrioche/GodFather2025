@@ -38,6 +38,7 @@ public class CanvasGameStateManager : MonoBehaviour
     [Button("lose")]
     private void OpenLoseScreen() // call by an event
     {
+        timerPlayer.instance.ResetTimer();
         _loseScreen.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         currentState = UiStateEnum.LOSE_SCREEN;
