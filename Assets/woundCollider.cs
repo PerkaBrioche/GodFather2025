@@ -7,8 +7,8 @@ public class woundCollider : MonoBehaviour
 
     internal void Heal()
     {
-        //Debug.Log($"Heal {transform.parent.name}");
-        //_woundController.HealWound();
+        Debug.Log($"Heal {transform.parent.name}");
+        _woundController.HealWound();
     }
 
     private void OnMouseEnter()
