@@ -22,6 +22,10 @@ public class TimerManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI timerText;
 
+    private bool wasSpeeding;
+    
+    private float speedTimerDuration;  
+
 
 
     public void IntializeTimer(float timer, float timerSpeed)
@@ -32,8 +36,6 @@ public class TimerManager : MonoBehaviour
         this.timerSpeed = timerSpeed;
         actualTimeLeft = timer;
         timerActive = true;
-        
-        StartTimer();
     }
     
     
@@ -48,12 +50,7 @@ public class TimerManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-    private void StartTimer()
-    {
-    }
-
+    
     private void Update()
     {
         if(!timerActive) return;
@@ -62,6 +59,18 @@ public class TimerManager : MonoBehaviour
 
     public void UpdateTimer()
     {
+        if (speedTimerDuration > 0f)
+        {
+            speedTimerDuration -= Time.deltaTime;
+            wasSpeeding = true;
+            timerSpeed = 1.75f;
+            timerText.color =Color.red;
+        }else if (wasSpeeding)
+        {
+            wasSpeeding = false;
+            timerSpeed = 1f;
+            timerText.color = Color.white;
+        }
         actualTimeLeft -= Time.deltaTime * timerSpeed;
         timerText.text = actualTimeLeft.ToString("0.0");
         UpdateTextAnimation();
@@ -76,18 +85,23 @@ public class TimerManager : MonoBehaviour
         OnTimerEnd?.Invoke();
         timerActive = false;
     }
-    
-    public void ChangeSpeedTimer(float newSpeed)
-    {
-        timerSpeed = newSpeed;
-    }
 
     void UpdateTextAnimation()
     {
         float wavesize = Mathf.Lerp(0, 0.12f, actualTimeLeft / maxTimer);
         textAnimatorBehavior.baseDelay = wavesize;
-        
     }
+    
+    public void StopTimer()
+    {
+        timerActive = false;
+    }
+    
+    public void StartTimerSpeeding()
+    {
+        speedTimerDuration = 2f;
+    }
+    
 }
 
 

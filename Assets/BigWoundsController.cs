@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -29,8 +30,16 @@ public class BigWoundsController : MonoBehaviour
         if(healed) return;
         
         healed = true;
-        spriteRenderer.sprite = woundHealedSprite;
         bloodParticleSystem.Stop();
+        gameObject.GetComponent<Animator>().Play("HealBigWounds");
+        StartCoroutine(WoundsHealProcess());
+    }
+
+    IEnumerator WoundsHealProcess()
+    {
+        yield return new WaitForSeconds(0.08f);
+        // END PSSSTT
+        spriteRenderer.sprite = woundHealedSprite;
     }
 
     public void DestroyWounds()

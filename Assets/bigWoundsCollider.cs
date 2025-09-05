@@ -9,11 +9,9 @@ public class bigWoundsCollider : MonoBehaviour
 
     private void Update()
     {
-        print("is mouse over: " + isMouseOver);
         if(!isMouseOver){return;}
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("Space key was pressed while mouse is over the object.");
             bigWoundController.HealWound();
         }
     }
@@ -22,10 +20,12 @@ public class bigWoundsCollider : MonoBehaviour
     private void OnMouseOver()
     {
         isMouseOver = true;
+        CursorManager.Instance.ChangeCursorType(CursorManager.cursorType.bobine);
     }
     
     private void OnMouseExit()
     {
         isMouseOver = false;
+        CursorManager.Instance.ChangeCursorType(CursorManager.cursorType.aiguille);
     }   
 }

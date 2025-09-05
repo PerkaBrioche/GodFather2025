@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8034708711992086746}
   - component: {fileID: 7586511425544379875}
   - component: {fileID: 6720735067431488487}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: SplineZone
   m_TagString: SafeZone
   m_Icon: {fileID: 0}
