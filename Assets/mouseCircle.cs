@@ -16,6 +16,14 @@ public class mouseCircle : MonoBehaviour
 
     [SerializeField] RaycastDetector raycastDetector;
 
+    [SerializeField] Color[] stringColors;
+
+    private void Start()
+    {
+        int randInt = Random.Range(0, stringColors.Length);
+        prefab.GetComponentInChildren<SpriteRenderer>().color = stringColors[randInt];
+    }
+
     // Update is called once per frame
     void Update()
     {
