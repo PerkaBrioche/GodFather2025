@@ -5,7 +5,8 @@ public class timerPlayer : MonoBehaviour
 {
     public static timerPlayer instance;
 
-    public float timer = 60f;
+    public float timerBase = 180f;
+    public float actualTimer;
     
     private void Awake()
     {
@@ -19,23 +20,23 @@ public class timerPlayer : MonoBehaviour
             Destroy(gameObject);
         }
 
-        timer = 120;
+        actualTimer = timerBase;
     }
 
     public void DecreaseTimerDuration()
     {
-        timer -= 10f;
+        actualTimer -= 10f;
 
     }
 
     public void ResetTimer()
     {
-        timer = 60f;
+        actualTimer = timerBase;
     }
 
     public float GetTimer()
     {
-        return timer;
+        return actualTimer;
     }
     
 

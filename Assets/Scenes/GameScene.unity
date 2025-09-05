@@ -1824,7 +1824,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1865,10 +1865,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 481355914}
-  - {fileID: 1598405905}
   - {fileID: 1470059208}
   - {fileID: 1418891963}
+  - {fileID: 481355914}
+  - {fileID: 1598405905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2120,6 +2120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579139326}
   - component: {fileID: 579139327}
+  - component: {fileID: 579139328}
   m_Layer: 0
   m_Name: MouseManger
   m_TagString: Untagged
@@ -2156,6 +2157,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eCurrentZone: 2
   bloodPrefab: {fileID: 1739884422516474546, guid: f363d21af23375748adb87eb409ca129, type: 3}
+--- !u!114 &579139328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579139325}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b45ff62ad689174893ade97e85b7303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  min: 0.2
+  step: 0.25
+  maxKey: 9
+  saveToPlayerPrefs: 1
+  prefsKey: MouseSensitivity
+  OnSensitivityChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &610585147
 GameObject:
   m_ObjectHideFlags: 0
@@ -4057,7 +4078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1470059208
 RectTransform:
   m_ObjectHideFlags: 0
