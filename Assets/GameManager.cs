@@ -17,7 +17,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] float timeLimit = 60;
     
+    private RaycastDetector _raycastDetector;
+    
+    
     // PRIVATE VARIABLE
+    
+    private bool won = false;
     
     private SplineWoundsController _currentSplineWound;
 
@@ -32,6 +37,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        _raycastDetector = FindFirstObjectByType<RaycastDetector>();
     }
 
     private void Start()
@@ -43,13 +49,18 @@ public class GameManager : MonoBehaviour
     {
         splinesWounds = Resources.LoadAll<GameObject>("SplinesWound");
     }
-    
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void StartGame()
     {
         InitializeSplineWounds();
         SpawnWounds();
         Mouse.current.WarpCursorPosition(Camera.main.WorldToScreenPoint(safeZoneTransform.position));
         TimerManager.Instance.IntializeTimer(timeLimit,1f);
+        _raycastDetector.enabled = true;
     }
 
     public void SpawnWounds()
@@ -64,11 +75,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (won) return;
+        CheckWinCondition();
+    }
+
+    private void CheckWinCondition()
+    {
+        if (AreAllWoundsHealed())
+        {
+            Win();
+        }
+    }
+
+    private void Win()
+    {
+        won = true;
+        _raycastDetector.enabled = false;
+        CanvasManager.Instance.ShowVictoryScreen();
+        TimerManager.Instance.StopTimer();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(2))
         {
             SceneManager.LoadScene(0);
         }
+    }
+    
+    public bool AreAllWoundsHealed()
+    {
+        if (_currentSplineWound == null) return false;
+        return _currentSplineWound.AllWoundsHealed();
     }
 }

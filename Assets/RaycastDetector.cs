@@ -76,6 +76,7 @@ public class RaycastDetector : MonoBehaviour
     private void SpawnBlood()
     {
         print("SPAWN BLOOD");
+        TimerManager.Instance.StartTimerSpeeding();
         ShakeManager.instance.ShakeCamera();
         canSpawnBlood = false;
         StartCoroutine(nameof(CoolDownBloodSpawn));
@@ -99,4 +100,6 @@ public class RaycastDetector : MonoBehaviour
             yield break;
         }
     }
+    
+    
 }

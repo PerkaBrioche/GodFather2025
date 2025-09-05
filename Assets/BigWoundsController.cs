@@ -40,7 +40,6 @@ public class BigWoundsController : MonoBehaviour
         yield return new WaitForSeconds(0.08f);
         // END PSSSTT
         spriteRenderer.sprite = woundHealedSprite;
-
     }
 
     public void DestroyWounds()
