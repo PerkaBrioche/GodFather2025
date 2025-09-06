@@ -5,7 +5,7 @@ public class timerPlayer : MonoBehaviour
 {
     public static timerPlayer instance;
 
-    public float timerBase = 180f;
+    public float timerBase = 150;
     public float actualTimer;
     
     private void Awake()
@@ -25,8 +25,7 @@ public class timerPlayer : MonoBehaviour
 
     public void DecreaseTimerDuration()
     {
-        actualTimer -= 10f;
-
+        actualTimer -= 25f;
     }
 
     public void ResetTimer()

@@ -93,7 +93,7 @@ public class RaycastDetector : MonoBehaviour
 
     private IEnumerator CoolDownSafeTimeBeforeBlood()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2.7f);
         if (eCurrentZone == CurrentZoneEnum.BLOOD)
         {
             SpawnBlood();

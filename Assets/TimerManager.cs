@@ -63,7 +63,7 @@ public class TimerManager : MonoBehaviour
         {
             speedTimerDuration -= Time.deltaTime;
             wasSpeeding = true;
-            timerSpeed = 2.2f;
+            timerSpeed = 2.5f;
             timerText.color =Color.red;
         }else if (wasSpeeding)
         {
